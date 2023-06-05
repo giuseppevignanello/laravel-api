@@ -16,6 +16,8 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ $project->title }}</h4>
                             <p class="card-text">{{ $project->description }}</p>
+                            <a class="btn btn-primary" href="projects/{{ $project->id }}/edit" role="button"><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
 
                         </div>
                     </div>
