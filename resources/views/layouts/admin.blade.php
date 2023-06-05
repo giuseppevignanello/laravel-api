@@ -30,28 +30,18 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">
+                    <a href="/" class="nav-link active" aria-current="page">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
-                        Dashboard
+                    <a href="{{ route('admin.projects.index') }}" class="nav-link text-white">
+                        View All Projects
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
-                        Orders
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        Products
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        Customers
+                    <a href="{{ route('admin.projects.create') }}" class="nav-link text-white">
+                        Create New Project
                     </a>
                 </li>
             </ul>
