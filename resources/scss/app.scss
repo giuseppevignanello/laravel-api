@@ -2,5 +2,10 @@
 
 
 .admin {
-    height: 90vh;
+    height: 92vh;
+}
+
+.admin_index {
+    max-height: 100%;
+    overflow-y: scroll;
 }
