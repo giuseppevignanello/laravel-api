@@ -74,7 +74,8 @@
 
             {{-- large sidebar --}}
 
-            <div class="d-flex flex-column flex-shrink-0 bg-dark d-md-none text-white" style="width: 4.5rem;">
+            <div class="d-flex flex-column flex-shrink-0 bg-dark d-md-none text-white small_sidebar"
+                style="width: 4.5rem;">
                 <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only"
                     data-bs-toggle="tooltip" data-bs-placement="right">
                     <svg class="bi text-white" width="40" height="14">
