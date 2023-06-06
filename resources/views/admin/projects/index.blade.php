@@ -16,6 +16,7 @@
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Repo Link</th>
                             <th scope="col">View Link</th>
                             <th scope="col">Actions</th>
@@ -26,6 +27,11 @@
                             <tr class="">
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
+                                @if ($project->status === 'pending')
+                                    <td>🚧</td>
+                                @elseif ($project->status === 'completed')
+                                    <td> ✅ </td>
+                                @endif
                                 <td><a href="{{ $project->repo_link }}"> {{ $project->repo_link }} </a></td>
                                 <td><a href="{{ $project->view_link }}"> {{ $project->view_link }} </a></td>
                                 <td><a class="btn btn-primary" href="projects/{{ $project->id }}" role="button"><i

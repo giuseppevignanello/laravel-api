@@ -13,7 +13,14 @@
                             {{ $project->end_date }}
                         </p>
                         <p class="card-text"><strong>Duration </strong> {{ $project->duration }} weeks</p>
-                        <p>{{ $project->status }}</p>
+                        @if ($project->status === 'pending')
+                            <p><strong>Status</strong> 🚧</p>
+                        @elseif ($project->status === 'completed')
+                            <p> <strong>Status</strong> ✅ </p>
+                        @endif
+
+                        <p><strong>Repo Link</strong> {{ $project->repo_link }}</p>
+                        <p><strong>View Link</strong> {{ $project->view_link }}</p>
 
                     </div>
                 </div>
