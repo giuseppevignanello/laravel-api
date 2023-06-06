@@ -50,7 +50,7 @@
                 <label for="end_date" class="form-label">End Date</label>
                 <input type="date" class="form-control" name="end_date" id="end_date"{{ $project->end_date }}>
             </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
 
     </div>
