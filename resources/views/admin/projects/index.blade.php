@@ -24,8 +24,8 @@
                             <tr class="">
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
-                                <td><a class="btn btn-primary" href="projects/{{ $project->id }}/edit" role="button"><i
-                                            class="fa-solid fa-pen-to-square"></i></a>
+                                <td><a class="btn btn-primary" href="projects/{{ $project->id }}" role="button"><i
+                                            class="fa-solid fa-eye"></i></a>
                                     <a class="btn btn-primary" href="projects/{{ $project->id }}/edit" role="button"><i
                                             class="fa-solid fa-pen-to-square"></i></a>
                                     <button type="submit" class="btn btn-danger" data-bs-toggle="modal"
