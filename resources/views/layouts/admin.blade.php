@@ -26,30 +26,27 @@
     @include('partials.header')
     <div class="admin d-flex">
 
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark d-none d-md-block">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span class="fs-4">Sidebar</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="/" class="nav-link active" aria-current="page">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.projects.index') }}" class="nav-link text-white">
-                        View All Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.projects.create') }}" class="nav-link text-white">
-                        Create New Project
-                    </a>
-                </li>
-            </ul>
-            <hr>
-            <div class="dropdown">
+        <div class="flex-column justify-content-between flex-shrink-0 bg-dark d-none d-md-flex large_sidebar">
+            <div>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active" aria-current="page">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.projects.index') }}" class="nav-link text-white">
+                            View All Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.projects.create') }}" class="nav-link text-white">
+                            Create New Project
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown pb-5">
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32"
