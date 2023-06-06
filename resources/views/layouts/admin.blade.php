@@ -74,6 +74,8 @@
             </div>
         </div>
 
+        {{-- large sidebar --}}
+
         <div class="d-flex flex-column flex-shrink-0 bg-dark d-md-none text-white" style="width: 4.5rem;">
             <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only"
                 data-bs-toggle="tooltip" data-bs-placement="right">
@@ -133,11 +135,16 @@
             </div>
         </div>
 
+        {{-- small sidebar --}}
+
+        {{-- /sidebars --}}
+
 
         <div>
             @yield('content')
         </div>
     </div>
+    @include('partials.footer')
 </body>
 
 </html>
