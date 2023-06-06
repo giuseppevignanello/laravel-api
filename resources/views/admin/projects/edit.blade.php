@@ -31,6 +31,18 @@
                     {{ $project->description }}">
             </div>
             <div class="mb-3">
+                <label for="repo_link" class="form-label">Repo link</label>
+                <input type="text" class="form-control" name="repo_link" id="repo_link"
+                    value="
+                    {{ $project->repo_link }}">
+            </div>
+            <div class="mb-3">
+                <label for="view_link" class="form-label">View link</label>
+                <input type="text" class="form-control" name="view_link" id="view_link"
+                    value="
+                    {{ $project->view_link }}">
+            </div>
+            <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select form-select-lg" name="status" id="status" {{ $project->status }}>
                     <option value="Pending">Pending</option>

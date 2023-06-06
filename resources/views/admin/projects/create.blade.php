@@ -28,6 +28,14 @@
                 <input type="text" class="form-control" name="description" id="description"{{ old('description') }}>
             </div>
             <div class="mb-3">
+                <label for="repo_link" class="form-label">Repo Link</label>
+                <input type="text" class="form-control" name="repo_link" id="repo_link"{{ old('repo_link') }}>
+            </div>
+            <div class="mb-3">
+                <label for="view_link" class="form-label">View Link</label>
+                <input type="text" class="form-control" name="view_link" id="view_link"{{ old('view_link') }}>
+            </div>
+            <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select form-select-lg" name="status" id="status" {{ old('status') }}>
                     <option value="Pending">Pending</option>

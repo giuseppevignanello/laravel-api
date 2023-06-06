@@ -10,8 +10,29 @@
     padding-right: 2rem;
 }
 
+.sidebar {
+    height: calc(100% - 70px);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    div {
+        height: 100%
+    }
+
+    ;
+}
+
 .admin {
-    height: 92vh;
+    margin-left: 6rem;
+    padding-bottom: 5rem;
+    overflow-y: scroll;
+}
+
+@media (min-width: 768px) {
+    .admin {
+        margin-left: 17rem;
+    }
 }
 
 .admin_index {
@@ -25,9 +46,10 @@
     margin-bottom: 4.5rem;
 }
 
+
+
 .edit_form {
-    margin-top: 6.5rem;
-    margin-left: 3rem;
+    margin-top: 6rem;
 }
 
 .dashboard_header {
