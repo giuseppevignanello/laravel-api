@@ -16,6 +16,8 @@
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Repo Link</th>
+                            <th scope="col">View Link</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -24,6 +26,8 @@
                             <tr class="">
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
+                                <td><a href="{{ $project->repo_link }}"> {{ $project->repo_link }} </a></td>
+                                <td><a href="{{ $project->view_link }}"> {{ $project->view_link }} </a></td>
                                 <td><a class="btn btn-primary" href="projects/{{ $project->id }}" role="button"><i
                                             class="fa-solid fa-eye"></i></a>
                                     <a class="btn btn-primary" href="projects/{{ $project->id }}/edit" role="button"><i
