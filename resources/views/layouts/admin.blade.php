@@ -26,7 +26,7 @@
     @include('partials.header')
     <div class="admin d-flex">
 
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark d-none d-md-block">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <span class="fs-4">Sidebar</span>
             </a>
@@ -73,6 +73,67 @@
                 </div>
             </div>
         </div>
+
+        <div class="d-flex flex-column flex-shrink-0 bg-dark d-md-none text-white" style="width: 4.5rem;">
+            <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only"
+                data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg class="bi text-white" width="40" height="14">
+
+                </svg>
+            </a>
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item home_button">
+                    <a href="/" class="nav-link active py-3 border-bottom" aria-current="page" title="Home"
+                        data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Home">
+                            <i class="fa-solid fa-house"></i>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.projects.index') }}" class="nav-link py-3 border-bottom text-white"
+                        title="Projects" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Projects">
+                            <i class="fa-solid fa-eye"></i>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.projects.create') }}" class="nav-link py-3 border-bottom text-white"
+                        title="Add" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi me-1 mb-3" width="24" height="24" role="img" aria-label="Add">
+                            <i class="fa-solid fa-plus"></i>
+                        </svg>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="dropdown border-top">
+                <a href="#"
+                    class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
+                    id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24"
+                        class="rounded-circle">
+                </a>
+                <div class="nav-item dropdown">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
+                        <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div>
             @yield('content')
         </div>

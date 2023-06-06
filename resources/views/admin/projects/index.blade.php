@@ -10,7 +10,7 @@
             </div>
         @endif
         <div class="container">
-            <div class="table  m-4">
+            <div class="table mt-4">
                 <table class="table table-primary">
                     <thead>
                         <tr>
