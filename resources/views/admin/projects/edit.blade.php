@@ -1,18 +1,19 @@
 @extends('layouts.admin')
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <div class="container my-3 ms-4">
-        <h1>Create New Project</h1>
+
+    <div class="container edit_form">
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <h1>Edit</h1>
         <form action="{{ route('admin.projects.update', $project->id) }}" method="post">
             @csrf
             @method('PUT')
@@ -25,7 +26,9 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" name="description" id="description"{{ $project->description }}>
+                <input type="text" class="form-control" name="description" id="description"
+                    value="
+                    {{ $project->description }}">
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
