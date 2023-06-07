@@ -45,6 +45,16 @@
                                 Create New Project
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.types.index') }}" class="nav-link text-white">
+                                View All Types
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.types.create') }}" class="nav-link text-white">
+                                Create New Type
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="dropdown pb-5">

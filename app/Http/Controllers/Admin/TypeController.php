@@ -29,7 +29,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return to_route('admin.types.create');
     }
 
     /**
