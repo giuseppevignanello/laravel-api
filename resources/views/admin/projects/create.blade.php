@@ -24,6 +24,16 @@
                 <small id="title" class="form-text text-muted">Required field</small>
             </div>
             <div class="mb-3">
+                <label for="types" class="form-label">Types</label>
+                <select class="form-select form-select-lg @error('type_id') is-invalid @enderror" name="types"
+                    id="types">
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ $type->id == old('type_id', '') ? 'selected' : '' }}>
+                            {{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" name="description" id="description"{{ old('description') }}>
             </div>
@@ -37,7 +47,7 @@
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select class="form-select form-select-lg" name="status" id="status" {{ old('status') }}>
+                <select class="form-select form-select-lg" name="status" id="status">
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
                 </select>
