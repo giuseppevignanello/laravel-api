@@ -21,6 +21,7 @@
 
                         <p><strong>Repo Link</strong> {{ $project->repo_link }}</p>
                         <p><strong>View Link</strong> {{ $project->view_link }}</p>
+                        <p><strong>Type</strong> {{ $project->type?->name }}</p>
 
                     </div>
                 </div>

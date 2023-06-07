@@ -16,6 +16,7 @@
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Status</th>
                             <th scope="col">Repo Link</th>
                             <th scope="col">View Link</th>
@@ -27,6 +28,7 @@
                             <tr class="">
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
+                                <td>{{ $project->type?->name }}</td>
                                 @if ($project->status === 'pending')
                                     <td>🚧</td>
                                 @elseif ($project->status === 'completed')

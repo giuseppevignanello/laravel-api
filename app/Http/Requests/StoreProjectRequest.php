@@ -26,12 +26,12 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'unique:projects'],
             'description' => ['nullable'],
-            'status' => [],
-            'duration' => 'nullable',
-            'start_date' => 'nullable',
-            'end_date' => 'nullable',
-            'repo_link' => 'nullable',
-            'view_link' => 'nullable'
+            'duration' => ['nullable'],
+            'start_date' => ['nullable'],
+            'end_date' => ['nullable'],
+            'repo_link' => ['nullable'],
+            'view_link' => ['nullable'],
+            'type_id' => ['exists:types,id']
         ];
     }
 }
