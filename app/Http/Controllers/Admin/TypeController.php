@@ -44,7 +44,6 @@ class TypeController extends Controller
         $val_data = $request->validated();
 
         $slug = Str::slug($request->name);
-        //dd($slug);
         $val_data['slug'] = $slug;
 
         $slug = Type::generateSlug($val_data['name']);
@@ -59,8 +58,12 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($id)
     {
+        $type = Type::findOrFail($id);
+        $projects = $type->projects()->get();
+
+        return view('admin.types.show', compact('type', 'projects'));
     }
 
     /**
@@ -71,6 +74,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
+
         return view('admin.types.edit', compact('type'));
     }
 
@@ -102,6 +106,7 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return to_route('admin.types.index')->with('messege', 'Type deleted successfully');
     }
 }

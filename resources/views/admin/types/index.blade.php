@@ -16,6 +16,7 @@
                         class="card-img-top" alt="...">
                     <div class="card-body shadow">
                         <h4 class="card-title">{{ $type->name }}</h4>
+                        <p class="badge bg-black">{{ $type->projects->count() }} Projects</p>
                         <p><a class="btn btn-primary" href="types/{{ $type->id }}" role="button"><i
                                     class="fa-solid fa-eye"></i></a>
                             <a class="btn btn-primary" href="types/{{ $type->id }}/edit" role="button"><i
@@ -38,7 +39,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to delete this projects?
+                                        Are you sure you want to delete this Type?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
