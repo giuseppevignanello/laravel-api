@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+    @if (session('message'))
+        <div class="alert alert-primary" role="alert">
+            <strong><i class="fa-solid fa-thumbs-up"></i> </strong>
+        </div>
+    @endif
     <div class="container">
         <h2 class="types_title text-center">Types</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-3 g-5">
