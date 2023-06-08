@@ -25,6 +25,11 @@
                 <small id="title" class="form-text text-muted">Required field</small>
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
+                    id="image" value="{{ $project->image }}">
+            </div>
+            <div class="mb-3">
                 <label for="type_id" class="form-label">Types</label>
                 <select class="form-select @error('type_id') is-invalid @enderror" name=" type_id" id="type_id">
                     <option value="">Select a type</option>

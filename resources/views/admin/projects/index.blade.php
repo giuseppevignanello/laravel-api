@@ -15,6 +15,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Title</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Description</th>
                             <th scope="col">Type</th>
                             <th scope="col">Technologies</th>
@@ -29,6 +30,7 @@
                             <tr class="">
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
+                                <td><img style="width: 80px" src="{{ $project->image }}" alt="{{ $project->title }}"></td>
                                 <td>{{ $project->type?->name }}</td>
                                 <td>
                                     @foreach ($project->technologies as $technology)

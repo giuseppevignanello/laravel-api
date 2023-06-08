@@ -24,7 +24,8 @@ class StoreTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required']
+            'name' => ['required'],
+            'image' => ['nullable']
         ];
     }
 }

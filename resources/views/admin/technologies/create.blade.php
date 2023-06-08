@@ -22,6 +22,13 @@
                     name="name" id="name" aria-describedby="helpId" placeholder="">
                 <small id="helpId" class="form-text text-muted">Required</small>
             </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" class="form-control @error('image') is-invalid
+                
+            @enderror"
+                    name="image" id="image" aria-describedby="helpId" placeholder="">
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
