@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,6 @@ class ProjectController extends Controller
         //Query selection for types
 
         $typeId = $request->get('type_id');
-
         if ($typeId) {
 
             $projects = Project::where('type_id', $typeId)->get();
@@ -42,8 +42,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        $technologies = Technology::all();
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -61,7 +62,12 @@ class ProjectController extends Controller
 
         $val_data['slug'] = $slug;
 
-        Project::create($val_data);
+        $new_project = Project::create($val_data);
+
+        //attach the technologies 
+        if ($request->has('technologies')) {
+            $new_project->technologies()->attach($request->technologies);
+        }
         return to_route('admin.projects.index')->with('message', "Project created successfully");
     }
 

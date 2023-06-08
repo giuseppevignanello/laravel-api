@@ -31,7 +31,8 @@ class StoreProjectRequest extends FormRequest
             'end_date' => ['nullable'],
             'repo_link' => ['nullable'],
             'view_link' => ['nullable'],
-            'type_id' => ['exists:types,id']
+            'type_id' => ['exists:types,id'],
+            'technologies' => ['exists:technologies,id']
         ];
     }
 }

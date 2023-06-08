@@ -17,6 +17,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
                             <th scope="col">Type</th>
+                            <th scope="col">Technologies</th>
                             <th scope="col">Status</th>
                             <th scope="col">Repo Link</th>
                             <th scope="col">View Link</th>
@@ -29,6 +30,11 @@
                                 <td scope="row">{{ $project->title }}</td>
                                 <td>{{ $project->description }}</td>
                                 <td>{{ $project->type?->name }}</td>
+                                <td>
+                                    @foreach ($project->technologies as $technology)
+                                        {{ $technology->name }}
+                                    @endforeach
+                                </td>
                                 @if ($project->status === 'pending')
                                     <td>🚧</td>
                                 @elseif ($project->status === 'completed')
