@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+
         <h2 class="types_title text-center">Technologies</h2>
         @if (session('message'))
             <div class="alert alert-primary" role="alert">
@@ -58,3 +59,5 @@
                 </div>
             @endforelse
         </div>
+    </div>
+@endsection
