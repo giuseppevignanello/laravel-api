@@ -9,5 +9,7 @@
         <a class="btn btn-primary btn-lg m-4" href="{{ route('admin.types.create') }}" role="button">Add New Type</a>
         <a class="btn btn-primary btn-lg m-4" href="{{ route('admin.technologies.index') }}" role="button">View All
             Technologies</a>
+        <a class="btn btn-primary btn-lg m-4" href="{{ route('admin.technologies.create') }}" role="button">Add New
+            Technology</a>
     </div>
 @endsection

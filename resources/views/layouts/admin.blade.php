@@ -60,6 +60,11 @@
                                 View All Technologies
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.technologies.create') }}" class="nav-link text-white">
+                                Create New Technology
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="dropdown pb-5">
@@ -117,7 +122,8 @@
                     <li>
                         <a href="{{ route('admin.projects.create') }}" class="nav-link py-3 border-bottom text-white"
                             title="Add" data-bs-toggle="tooltip" data-bs-placement="right">
-                            <svg class="bi me-1 mb-3" width="24" height="24" role="img" aria-label="Add">
+                            <svg class="bi me-1 mb-3" width="24" height="24" role="img"
+                                aria-label="Add">
                                 <i class="fa-solid fa-plus"></i>
                             </svg>
                         </a>
