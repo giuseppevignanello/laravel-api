@@ -23,7 +23,7 @@
                             </button>
                         </p>
                         {{-- Modal --}}
-                        {{-- <div class="modal fade" id="deleteModal-{{ $technology->id }}" tabindex="-1"
+                        <div class="modal fade" id="deleteModal-{{ $technology->id }}" tabindex="-1"
                             data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                        <form action="{{ route('admin.technology.destroy', $technology->id) }}"
+                                        <form action="{{ route('admin.technologies.destroy', $technology->id) }}"
                                             method="post">
                                             @csrf
                                             @method('DELETE')
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
                 </div>
