@@ -58,12 +58,8 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $type = Type::findOrFail($id);
-        $projects = $type->projects()->get();
-
-        return view('admin.types.show', compact('type', 'projects'));
     }
 
     /**

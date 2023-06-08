@@ -18,11 +18,15 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
+
+        //Query selection for types
+
         $typeId = $request->get('type_id');
 
         if ($typeId) {
 
-            $projects = Project::where('type_id', $typeId)->get();Project::where('type_id', $typeId)->get();
+            $projects = Project::where('type_id', $typeId)->get();
+            Project::where('type_id', $typeId)->get();
         } else {
 
             $projects = Project::all();
@@ -39,7 +43,6 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-
         return view('admin.projects.create', compact('types'));
     }
 
@@ -53,6 +56,7 @@ class ProjectController extends Controller
     {
         $val_data =  $request->validated();
 
+        //slug generation
         $slug = Project::generateSlug($val_data['title']);
 
         $val_data['slug'] = $slug;
