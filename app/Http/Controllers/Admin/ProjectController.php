@@ -29,7 +29,7 @@ class ProjectController extends Controller
             Project::where('type_id', $typeId)->get();
         } else {
 
-            $projects = Project::all();
+            $projects = Project::orderByDesc('id')->get();
         }
 
         return view('admin.projects.index', compact('projects'));
