@@ -17,8 +17,10 @@
                     <div class="card-body shadow">
                         <h4 class="card-title">{{ $type->name }}</h4>
                         <p class="badge bg-black">{{ $type->projects->count() }} Projects</p>
-                        <p><a class="btn btn-primary" href="types/{{ $type->id }}" role="button"><i
-                                    class="fa-solid fa-eye"></i></a>
+                        <p><a class="btn btn-primary" href="{{ route('admin.projects.index', ['type_id' => $type->id]) }}"
+                                role="button">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
                             <a class="btn btn-primary" href="types/{{ $type->id }}/edit" role="button"><i
                                     class="fa-solid fa-pen-to-square"></i></a>
                             <button type="submit" class="btn btn-danger" data-bs-toggle="modal"

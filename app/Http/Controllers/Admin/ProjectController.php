@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -15,10 +16,17 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $typeId = $request->get('type_id');
 
-        $projects = Project::all();
+        if ($typeId) {
+
+            $projects = Project::where('type_id', $typeId)->get();Project::where('type_id', $typeId)->get();
+        } else {
+
+            $projects = Project::all();
+        }
 
         return view('admin.projects.index', compact('projects'));
     }

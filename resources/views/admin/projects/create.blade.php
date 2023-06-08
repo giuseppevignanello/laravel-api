@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
-
     <div class="container edit_form">
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
