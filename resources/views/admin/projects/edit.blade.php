@@ -77,9 +77,9 @@
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select class="form-select form-select-lg" name="status" id="status" {{ $project->status }}>
-                    <option value="Pending">Pending</option>
-                    <option value="Completed">Completed</option>
+                <select class="form-select form-select-lg" name="status" id="status">
+                    <option value="pending" {{ $project->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="completed" {{ $project->status == 'completed' ? 'selected' : '' }}>Completed</option>
                 </select>
             </div>
             <div class="mb-3">

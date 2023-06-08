@@ -30,6 +30,7 @@ class UpdateProjectRequest extends FormRequest
             'duration' => ['nullable'],
             'start_date' => ['nullable'],
             'end_date' => ['nullable'],
+            'status' => ['required'],
             'repo_link' => ['nullable'],
             'view_link' => ['nullable'],
             'type_id' => ['exists:types,id'],

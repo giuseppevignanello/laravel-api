@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreProjectRequest extends FormRequest
 {
@@ -29,6 +30,7 @@ class StoreProjectRequest extends FormRequest
             'duration' => ['nullable'],
             'start_date' => ['nullable'],
             'end_date' => ['nullable'],
+            'status' => ['required'],
             'repo_link' => ['nullable'],
             'view_link' => ['nullable'],
             'type_id' => ['exists:types,id'],

@@ -35,9 +35,9 @@
                                         {{ $technology->name }}
                                     @endforeach
                                 </td>
-                                @if ($project->status === 'pending')
+                                @if ($project->status == 'pending')
                                     <td>🚧</td>
-                                @elseif ($project->status === 'completed')
+                                @elseif ($project->status == 'completed')
                                     <td> ✅ </td>
                                 @endif
                                 <td><a href="{{ $project->repo_link }}"> {{ $project->repo_link }} </a></td>
