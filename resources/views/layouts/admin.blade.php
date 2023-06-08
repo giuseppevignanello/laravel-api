@@ -55,6 +55,11 @@
                                 Create New Type
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.technologies.index') }}" class="nav-link text-white">
+                                View All Technologies
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="dropdown pb-5">
