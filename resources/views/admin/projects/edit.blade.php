@@ -24,10 +24,13 @@
                     value="{{ $project->title }}">
                 <small id="title" class="form-text text-muted">Required field</small>
             </div>
-            <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image">
+            <div>
+                <img style="width: 80px" src="{{ asset('storage/' . $project->image) }}" alt="">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                        id="image">
+                </div>
             </div>
             <div class="mb-3">
                 <label for="type_id" class="form-label">Types</label>
