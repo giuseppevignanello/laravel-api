@@ -12,7 +12,7 @@
             </div>
         @endif
         <h2>Edit Type</h2>
-        <form action="{{ route('admin.types.update', $type) }}" method="post">
+        <form action="{{ route('admin.types.update', $type) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -26,10 +26,10 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" class="form-control @error('image') is-invalid
+                <input type="file" class="form-control @error('image') is-invalid
                 
             @enderror"
-                    name="image" id="image" aria-describedby="helpId" placeholder="" value="{{ $type->image }}">
+                    name="image" id="image" aria-describedby="helpId">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

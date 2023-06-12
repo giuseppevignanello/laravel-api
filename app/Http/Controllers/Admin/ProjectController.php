@@ -63,14 +63,13 @@ class ProjectController extends Controller
 
         $val_data['slug'] = $slug;
 
-        $new_project = Project::create($val_data);
 
         if ($request->hasFile('image')) {
             $image_path = Storage::put('uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 
-
+        $new_project = Project::create($val_data);
         //attach the technologies 
         if ($request->has('technologies')) {
             $new_project->technologies()->attach($request->technologies);

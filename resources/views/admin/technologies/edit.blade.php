@@ -12,7 +12,7 @@
             </div>
         @endif
         <h2>Edit Technology</h2>
-        <form action="{{ route('admin.technologies.update', $technology) }}" method="post">
+        <form action="{{ route('admin.technologies.update', $technology) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -26,10 +26,10 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" class="form-control @error('image') is-invalid
+                <input type="file" class="form-control @error('image') is-invalid
                 
             @enderror"
-                    name="image" id="image" aria-describedby="helpId" placeholder="" value="{{ $technology->image }}">
+                    name="image" id="image" aria-describedby="helpId">
                 <small id="helpId" class="form-text text-muted">Required</small>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

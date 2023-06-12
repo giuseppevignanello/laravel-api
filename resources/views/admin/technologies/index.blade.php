@@ -12,7 +12,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-3 g-5">
             @forelse ($technologies as $technology)
                 <div class="card border-0">
-                    <img src="{{ $technology->image }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/' . $technology->image) }}" class="card-img-top" alt="...">
                     <div class="card-body shadow">
                         <h4 class="card-title">{{ $technology->name }}</h4>
                         <p><a class="btn btn-primary" href="technologies/{{ $technology->id }}/edit" role="button"><i

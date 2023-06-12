@@ -12,7 +12,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-3 g-5">
             @forelse ($types as $type)
                 <div class="card border-0">
-                    <img src="{{ $type->image }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/' . $type->image) }}" class="card-img-top" alt="...">
                     <div class="card-body shadow">
                         <h4 class="card-title">{{ $type->name }}</h4>
                         <p class="badge bg-black">{{ $type->projects->count() }} Projects</p>

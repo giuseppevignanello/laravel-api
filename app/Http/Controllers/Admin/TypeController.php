@@ -6,6 +6,7 @@ use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class TypeController extends Controller
@@ -47,7 +48,13 @@ class TypeController extends Controller
 
         $slug = Type::generateSlug($val_data['name']);
 
+        if ($request->hasFile('image')) {
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
+
         Type::create($val_data);
+
         return to_route('admin.types.index')->with('message', 'Type created successfully');
     }
 

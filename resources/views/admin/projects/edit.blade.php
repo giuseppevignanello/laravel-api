@@ -14,7 +14,7 @@
             </div>
         @endif
         <h1>Edit</h1>
-        <form action="{{ route('admin.projects.update', $project->id) }}" method="post">
+        <form action="{{ route('admin.projects.update', $project->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -26,8 +26,8 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image" value="{{ $project->image }}">
+                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                    id="image">
             </div>
             <div class="mb-3">
                 <label for="type_id" class="form-label">Types</label>

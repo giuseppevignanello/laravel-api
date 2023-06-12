@@ -6,6 +6,7 @@ use App\Models\Technology;
 use App\Http\Requests\StoreTechnologyRequest;
 use App\Http\Requests\UpdateTechnologyRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class TechnologyController extends Controller
@@ -45,6 +46,11 @@ class TechnologyController extends Controller
         $val_data['slug'] = $slug;
 
         $slug = Technology::generateSlug($val_data['name']);
+
+        if ($request->hasFile('image')) {
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
 
         Technology::create($val_data);
         return to_route('admin.technologies.index')->with('message', 'Technology created successfully');

@@ -12,7 +12,7 @@
             </div>
         @endif
         <h2>Add New Type</h2>
-        <form action="{{ route('admin.types.store') }}" method="post">
+        <form action="{{ route('admin.types.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="image" class="form-label">Name</label>
@@ -23,10 +23,10 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" class="form-control @error('image') is-invalid
+                <input type="file" class="form-control @error('image') is-invalid
                 
             @enderror"
-                    image="image" id="image" aria-describedby="helpId" placeholder="">
+                    name="image" id="image" aria-describedby="helpId" placeholder="">
                 <small id="helpId" class="form-text text-muted">Required</small>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

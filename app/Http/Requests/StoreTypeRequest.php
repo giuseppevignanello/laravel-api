@@ -25,7 +25,7 @@ class StoreTypeRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'image' => ['nullable']
+            'image' => ['nullable', 'image']
         ];
     }
 }
