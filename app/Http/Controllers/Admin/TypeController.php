@@ -117,6 +117,11 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
+
+        if($type->image){
+            Storage::delete($type->image);
+        };
+
         $type->delete();
         return to_route('admin.types.index')->with('message', 'Type deleted successfully');
     }

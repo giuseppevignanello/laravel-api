@@ -115,6 +115,11 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
+
+        if($technology->image){
+            Storage::delete($technology->image);
+        };
+
         $technology->delete();
         return to_route('admin.technologies.index')->with('message', 'Technology deleted successfully');
     }
