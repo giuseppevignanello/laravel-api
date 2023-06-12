@@ -113,6 +113,15 @@ class ProjectController extends Controller
     {
         $val_data =  $request->validated();
 
+        if ($request->hasFIle('image')) {
+            if ($project->image) {
+                Storage::delete($project->image);
+            }
+
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
+
         $project->update($val_data);
 
         //sync the technologies 

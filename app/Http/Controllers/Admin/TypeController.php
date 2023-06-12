@@ -96,6 +96,15 @@ class TypeController extends Controller
         $val_data['slug'] = $slug;
 
         $slug = Type::generateSlug($val_data['name']);
+
+        if ($request->hasFIle('image')) {
+            if ($type->image) {
+                Storage::delete($type->image);
+            }
+
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
         $type->update($val_data);
         return to_route('admin.types.index')->with('message', 'Type updated successfully');
     }

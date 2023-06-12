@@ -94,6 +94,15 @@ class TechnologyController extends Controller
         $val_data['slug'] = $slug;
 
         $slug = Technology::generateSlug($val_data['name']);
+
+        if ($request->hasFIle('image')) {
+            if ($technology->image) {
+                Storage::delete($technology->image);
+            }
+
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
         $technology->update($val_data);
         return to_route('admin.technologies.index')->with('message', 'Technology updated successfully');
     }
