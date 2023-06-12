@@ -54,7 +54,7 @@
                 </div>
             @empty
                 <div>
-                    <p> No Types</p>
+                    <p> No Technologies</p>
                 </div>
             @endforelse
         </div>
