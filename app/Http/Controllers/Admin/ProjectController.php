@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -64,10 +65,17 @@ class ProjectController extends Controller
 
         $new_project = Project::create($val_data);
 
+        if ($request->hasFile('image')) {
+            $image_path = Storage::put('uploads', $request->image);
+            $val_data['image'] = $image_path;
+        }
+
+
         //attach the technologies 
         if ($request->has('technologies')) {
             $new_project->technologies()->attach($request->technologies);
         }
+
         return to_route('admin.projects.index')->with('message', "Project created successfully");
     }
 

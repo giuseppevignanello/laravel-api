@@ -30,7 +30,7 @@ class StoreProjectRequest extends FormRequest
             'duration' => ['nullable'],
             'start_date' => ['nullable'],
             'end_date' => ['nullable'],
-            'image' => ['nullable'],
+            'image' => ['nullable', 'image'],
             'status' => ['required'],
             'repo_link' => ['nullable'],
             'view_link' => ['nullable'],
