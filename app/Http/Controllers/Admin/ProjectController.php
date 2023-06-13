@@ -65,7 +65,7 @@ class ProjectController extends Controller
 
 
         if ($request->hasFile('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 
