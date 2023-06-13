@@ -140,7 +140,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        if($project->image){
+        if ($project->image) {
             Storage::delete($project->image);
         };
 

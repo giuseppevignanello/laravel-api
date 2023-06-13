@@ -31,8 +31,9 @@
                                 <td scope="row">{{ $project->title }}</td>
                                 <td><img style="width: 80px" src="{{ asset('storage/' . $project->image) }}"
                                         alt="{{ $project->title }}"></td>
-                                <td>{{ $project->type?->name }}</td>
+
                                 <td>{{ $project->description }}</td>
+                                <td>{{ $project->type?->name }}</td>
                                 <td>
                                     @foreach ($project->technologies as $technology)
                                         {{ $technology->name }}

@@ -31,37 +31,45 @@
                 <div>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
-                            <a href="/" class="nav-link active" aria-current="page">
+                            <a href="/"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'home' ? 'active' : '' }}"
+                                aria-current="page">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.projects.index') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.projects.index') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.index' ? 'active' : '' }}">
                                 View All Projects
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.projects.create') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.projects.create') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.create' ? 'active' : '' }}">
                                 Create New Project
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.types.index') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.types.index') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}">
                                 View All Types
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.types.create') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.types.create') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.types.create' ? 'active' : '' }}">
                                 Create New Type
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.technologies.index') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.technologies.index') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.technologies.index' ? 'active' : '' }}">
                                 View All Technologies
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.technologies.create') }}" class="nav-link text-white">
+                            <a href="{{ route('admin.technologies.create') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.technologies.create' ? 'active' : '' }}">
                                 Create New Technology
                             </a>
                         </li>
