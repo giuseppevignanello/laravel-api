@@ -97,11 +97,13 @@
             </div>
             <div class="mb-3">
                 <label for="start_date" class="form-label">Start Date</label>
-                <input type="date" class="form-control" name="start_date" id="start_date"{{ $project->start_date }}>
+                <input type="date" class="form-control" name="start_date" id="start_date"{{ $project->start_date }}
+                    value="{{ $project->start_date }}">
             </div>
             <div class="mb-3">
                 <label for="end_date" class="form-label">End Date</label>
-                <input type="date" class="form-control" name="end_date" id="end_date"{{ $project->end_date }}>
+                <input type="date" class="form-control" name="end_date" id="end_date"{{ $project->end_date }}
+                    value="{{ $project->start_date }}">
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
