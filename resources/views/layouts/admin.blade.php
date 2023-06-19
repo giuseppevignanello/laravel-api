@@ -73,6 +73,19 @@
                                 Create New Technology
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.publishings.index') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.publishings.index' ? 'active' : '' }}">
+                                View All Publishing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.publishings.create') }}"
+                                class="nav-link text-white {{ Route::currentRouteName() === 'admin.publishings.create' ? 'active' : '' }}">
+                                Create New Publishing
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
                 <div>

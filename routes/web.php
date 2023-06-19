@@ -5,7 +5,10 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Admin\PublishingController;
+use App\Mail\NewLead;
 use Illuminate\Support\Facades\Route;
+use App\Models\Lead;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mailable', function () {
+    $lead = Lead::find(1);
+    return new NewLead($lead);
+});
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
 
@@ -29,6 +36,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('projects', ProjectController::class);
     Route::resource('types', TypeController::class);
     Route::resource('technologies', TechnologyController::class);
+    Route::resource('publishings', PublishingController::class);
 });
 
 require __DIR__ . '/auth.php';
