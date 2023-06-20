@@ -9,7 +9,7 @@
                 {{ session('message') }}
             </div>
         @endif
-        <div class="row">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
             @forelse ($publishings as $publishing)
                 <div class="card border-0">
                     <img src="{{ asset('storage/' . $publishing->image) }}" class="card-img-top" alt="...">
