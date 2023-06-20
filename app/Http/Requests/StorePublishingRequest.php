@@ -29,6 +29,7 @@ class StorePublishingRequest extends FormRequest
             'start_date'  => ['nullable'],
             'type'  => ['nullable'],
             'location'  => ['nullable'],
+            'website' => ['nullable']
         ];
     }
 }

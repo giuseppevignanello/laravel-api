@@ -55,6 +55,14 @@
             @enderror"
                     name="image" id="image" aria-describedby="helpId" placeholder="">
             </div>
+            <div class="mb-3">
+                <label for="website" class="form-label">Website</label>
+                <input type="text"
+                    class="form-control @error('website') is-invalid
+                
+            @enderror" name="website"
+                    id="website" aria-describedby="helpId" placeholder="">
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

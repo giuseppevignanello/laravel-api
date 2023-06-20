@@ -9,12 +9,13 @@
                 {{ session('message') }}
             </div>
         @endif
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-3 g-5">
+        <div class="row">
             @forelse ($publishings as $publishing)
                 <div class="card border-0">
                     <img src="{{ asset('storage/' . $publishing->image) }}" class="card-img-top" alt="...">
                     <div class="card-body shadow">
                         <h4 class="card-title">{{ $publishing->name }}</h4>
+                        <h5 class="card-title"> <a href="{{ $publishing->website }}">{{ $publishing->website }} </a> </h5>
 
                         <p>
                             <a class="btn btn-primary" href="publishings/{{ $publishing->id }}/edit" role="button"><i

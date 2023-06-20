@@ -41,7 +41,12 @@ class PublishingController extends Controller
     public function store(StorePublishingRequest $request)
     {
         $val_data = $request->validated();
+
+        $slug = Str::slug($request->name);
+        $val_data['slug'] = $slug;
+
         $slug = Publishing::generateSlug($val_data['name']);
+
         if ($request->hasFile('image')) {
             $image_path = Storage::put('uploads', $request->image);
             $val_data['image'] = $image_path;
@@ -82,7 +87,7 @@ class PublishingController extends Controller
      */
     public function update(UpdatePublishingRequest $request, Publishing $publishing)
     {
-        $val_date = $request->valideted();
+        $val_data = $request->validated();
         $slug = Str::slug($request->name);
 
         $val_data['slug'] = $slug;

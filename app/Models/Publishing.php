@@ -15,5 +15,5 @@ class Publishing extends Model
         return Str::slug($title, '-');
     }
 
-    protected $fillable = ['name', 'slug', 'image', 'start_date', 'location', 'type'];
+    protected $fillable = ['name', 'slug', 'image', 'start_date', 'location', 'type', 'website'];
 }
