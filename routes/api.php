@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Api\ProjectController;
-use App\Http\Controllers\api\PublishingController;
+use App\Http\Controllers\Api\PublishingController;
 use App\Http\Controllers\Api\TechnologyController;
-use App\Http\Controllers\api\TypeController;
+use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
