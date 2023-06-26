@@ -23,12 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('api/projects', [ProjectController::class, 'index']);
 
 
 
-Route::get("/projects/{slug}", [ProjectController::class, "show"]);
-Route::get('/technologies', [TechnologyController::class, 'index']);
-Route::get('/types', [TypeController::class, 'index']);
-Route::get('/publishings', [PublishingController::class, 'index']);
-Route::post('/contacts', [LeadController::class, 'store']);
+Route::get("api/projects/{slug}", [ProjectController::class, "show"]);
+Route::get('api/technologies', [TechnologyController::class, 'index']);
+Route::get('api/types', [TypeController::class, 'index']);
+Route::get('api/publishings', [PublishingController::class, 'index']);
+Route::post('api/contacts', [LeadController::class, 'store']);
