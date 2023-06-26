@@ -118,7 +118,7 @@ class ProjectController extends Controller
                 Storage::delete($project->image);
             }
 
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 

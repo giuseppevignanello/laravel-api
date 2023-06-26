@@ -48,7 +48,7 @@ class PublishingController extends Controller
         $slug = Publishing::generateSlug($val_data['name']);
 
         if ($request->hasFile('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 
@@ -99,7 +99,7 @@ class PublishingController extends Controller
                 Storage::delete($publishing->image);
             }
 
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 

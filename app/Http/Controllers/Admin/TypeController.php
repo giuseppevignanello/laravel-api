@@ -49,7 +49,7 @@ class TypeController extends Controller
         $slug = Type::generateSlug($val_data['name']);
 
         if ($request->hasFile('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 
@@ -102,7 +102,7 @@ class TypeController extends Controller
                 Storage::delete($type->image);
             }
 
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
         $type->update($val_data);
@@ -118,7 +118,7 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
 
-        if($type->image){
+        if ($type->image) {
             Storage::delete($type->image);
         };
 

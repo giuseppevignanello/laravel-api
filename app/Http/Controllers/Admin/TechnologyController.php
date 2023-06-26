@@ -48,7 +48,7 @@ class TechnologyController extends Controller
         $slug = Technology::generateSlug($val_data['name']);
 
         if ($request->hasFile('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
 
@@ -100,7 +100,7 @@ class TechnologyController extends Controller
                 Storage::delete($technology->image);
             }
 
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('public/uploads', $request->image);
             $val_data['image'] = $image_path;
         }
         $technology->update($val_data);
@@ -116,7 +116,7 @@ class TechnologyController extends Controller
     public function destroy(Technology $technology)
     {
 
-        if($technology->image){
+        if ($technology->image) {
             Storage::delete($technology->image);
         };
 
