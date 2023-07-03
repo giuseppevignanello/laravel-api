@@ -1,5 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(255, 216, 155);
+    background: linear-gradient(90deg, rgba(255, 216, 155, 1) 9%, rgba(25, 84, 123, 1) 100%);
+}
+
+.bg_header {
+    background-color: rgb(0 0 0 / 73%);
+}
+
+.avatar_me {
+    border: 5px solid white;
+    overflow-y: clip;
+    position: relative;
+
+    img {
+        position: relative;
+        left: 0%;
+        bottom: -10%
+    }
+}
+
 .dashboard_home {
     margin-top: 5rem;
 }
