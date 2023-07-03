@@ -2,7 +2,7 @@
 @section('content')
     <div class="container py-4">
 
-        <h1 class="text-center py-2"> <strong>Are you sure you should be here </strong></h1>
+        <h1 class="text-center py-2"> <strong>Are you sure you should be here? </strong></h1>
         <div class="d-flex justify-content-center mb-3">
             <div class="avatar_me bg_header">
                 <img src="../../../img/me_api.png" alt="">
