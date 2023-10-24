@@ -16,7 +16,7 @@ class ProjectController extends Controller
         if ($selectedType) {
             $projects = Project::query()->where('type_id', $selectedType)->with(['type', 'technologies'])->orderByDesc('id')->paginate(8);
         } else {
-            $projects = Project::with(['type', 'technologies'])->orderByDesc('id')->paginate(8);
+            $projects = Project::with(['type', 'technologies'])->orderByDesc('isEvidence')->orderByDesc('id')->paginate(8);
         }
 
         return response()->json([

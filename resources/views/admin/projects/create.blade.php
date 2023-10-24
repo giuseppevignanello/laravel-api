@@ -85,6 +85,10 @@
                 <label for="end_date" class="form-label">End Date</label>
                 <input type="date" class="form-control" name="end_date" id="end_date"{{ old('end_date') }}>
             </div>
+            <div class="mb-3">
+                <label for="is_evidence" class="form-label">Is Evidence?</label>
+                 <input type="checkbox" class="form-check-input" name="isEvidence" id="is_evidence" {{ old('isEvidence') ? 'checked' : '' }}>
+            </div>
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
 

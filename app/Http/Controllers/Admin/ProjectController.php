@@ -62,7 +62,7 @@ class ProjectController extends Controller
         $slug = Project::generateSlug($val_data['title']);
 
         $val_data['slug'] = $slug;
-
+        $val_data['isEvidence'] = $request->has('isEvidence');
 
         if ($request->hasFile('image')) {
             $image_path = Storage::put('public/uploads', $request->image);
@@ -112,6 +112,8 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $val_data =  $request->validated();
+
+        $val_data['isEvidence'] = $request->has('isEvidence');
 
         if ($request->hasFIle('image')) {
             if ($project->image) {
